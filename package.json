@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check-env && next build",
     "start": "next start",
-    "seed": "tsx prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts",
+    "check-env": "node -e \"const fs=require('fs');const path=require('path');const envFiles=['.env','.env.local'];const found=envFiles.filter(f=>fs.existsSync(path.join(process.cwd(),f)));if(found.length>0){console.error('❌ Environment files found in git:',found.join(', '));console.error('Please remove these files before committing.');process.exit(1);}else{console.log('✅ No environment files found in git');}\""
   },
   "dependencies": {
     "@prisma/client": "^5.17.0",
