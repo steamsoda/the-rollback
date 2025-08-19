@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Import retro98 styles */
+@import '../styles/retro98.css';
+
+/* Base styles */
+html, body, :root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.22;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 { font-size: 20px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+h5 { font-size: 13px; }
+h6 { font-size: 12px; }
+
+/* Utility classes */
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.text-muted {
+  color: var(--98-text-muted);
+}
+
+.border-hairline {
+  border-width: 1px;
+}
+
+/* Focus styles */
+.focus-ring:focus {
+  outline: 1px dotted #000;
+  outline-offset: 1px;
+}
